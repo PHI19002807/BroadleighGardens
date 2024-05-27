@@ -101,7 +101,7 @@
             <p>Address: Barr House, Bishops Hull, Taunton, Somerset, TA4 1AE</p>
         </div>
         <div class="copyright-right">
-            <p>&copy; Copyright © 2023 Will Phillips</p>
+            <p>Copyright © 2023 Will Phillips</p>
         </div>
     </div>
 </body>
