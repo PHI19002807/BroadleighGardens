@@ -17,16 +17,20 @@
         .navbar {
             background-color: #4E5B46;
             color: #fff;
-            padding: 10px;
+            padding: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .navbar a {
             color: #fff;
             text-decoration: none;
-            margin-right: 5px;
-            font-size: 24px;
+            margin-right: 8px; /* Reduced margin to bring links closer */
+            font-size: 40px; /* Increased font size */
+        }
+        .navbar a:last-child {
+            margin-right: 0; /* Remove right margin from the last link */
         }
         .navbar h1 {
             margin: 0;
@@ -50,6 +54,12 @@
             width: 20px;
             height: 20px;
             margin-bottom: 5px;
+        }
+        .navbar a.special-link:last-of-type img,
+        .navbar a.special-link:nth-last-of-type(2) img,
+        .navbar a.special-link:nth-last-of-type(3) img {
+            width: 40px; /* Double the original size */
+            height: 40px; /* Double the original size */
         }
         .footer {
             background-color: #4E5B46;
