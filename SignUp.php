@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssss", $fname, $lname, $email, $password);
 
     if ($stmt->execute()) {
-        header("Location: login.php");
+        header("Location: Login.php");
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -26,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="styles/css/styles.css">
 </head>
 <body>
     <h2>Register</h2>
-    <form action="register.php" method="post">
+    <form action="SignUp.php" method="post">
         <label for="fname">First Name:</label>
         <input type="text" id="fname" name="fname" required><br>
         <label for="lname">Last Name:</label>

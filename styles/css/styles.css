@@ -1,68 +1,74 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.products, .reviews {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.product, .review {
-    background: #fff;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(33% - 40px);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 0 auto;
-}
-
-form input, form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-form input[type="submit"] {
-    background: #5cb85c;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-h1, h2 {
-    text-align: center;
-}
 /* Additional CSS styles for navbar and footer */
 .navbar {
-    background-color: #4E5B46; /* Green color */
+    background-color: #4E5B46;
     color: #fff;
     padding: 10px;
     display: flex;
-    justify-content: space-between; /* Spread items evenly along the navbar */
-    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Jomhuria', sans-serif;
 }
 
-.navbar a {
+.navbar a.navbar-link {
     color: #fff;
     text-decoration: none;
-    margin-right: 5px; /* Adjust right margin to reduce spacing */
+    margin-right: 5px;
+    font-size: 28px; /* Increased font size for navbar links */
 }
 
-.navbar h1 {
-    margin: 0; /* Reset margin */
+.navbar a.brand-link {
+    color: #AFE188;
 }
 
-.navbar img {
-    width: 50px; /* Adjust logo size as needed */
-    margin-right: 10px; /* Add margin between logo and buttons */
+.navbar a.special-link {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar a.special-link img {
+    width: 100px; /* Increased image width */
+    height: 40px; /* Adjusted image height */
+    margin-bottom: 5px;
+}
+
+.footer {
+    background-color: #4E5B46;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px; /* Increased font size for footer */
+}
+
+.address {
+    margin-right: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.left-box, .right-box {
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.middle-image {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
 }
