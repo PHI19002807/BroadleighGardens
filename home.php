@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Jomhuria" rel="stylesheet">
-    <link rel="stylesheet" href="styles/css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* CSS styling for navbar and footer */
         body {
             background-color: #B6CEAB;
             font-family: 'Jomhuria', sans-serif;
-            font-size: 24px; /* Increased font size */
+            font-size: 24px;
             margin: 0;
             padding: 0;
         }
@@ -26,7 +26,7 @@
             color: #fff;
             text-decoration: none;
             margin-right: 5px;
-            font-size: 24px; /* Increased font size */
+            font-size: 24px;
         }
         .navbar h1 {
             margin: 0;
@@ -44,7 +44,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-end;
-            font-size: 36px; /* Increased font size */
+            font-size: 36px;
         }
         .navbar a.special-link img {
             width: 20px;
@@ -84,7 +84,6 @@
             height: 300px;
             margin: 10px;
         }
-        /* Additional styling for new messages */
         .welcome-message {
             color: #944365;
             text-align: center;

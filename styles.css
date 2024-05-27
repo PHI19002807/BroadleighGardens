@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Jomhuria', sans-serif;
+    font-family: 'Jomhuria', sans-serif; /* Applying font family to navbar */
 }
 
 .navbar a.navbar-link {
@@ -14,6 +14,7 @@
     text-decoration: none;
     margin-right: 5px;
     font-size: 28px; /* Increased font size for navbar links */
+    font-family: 'Jomhuria', sans-serif; /* Applying font family to navbar links */
 }
 
 .navbar a.brand-link {
@@ -45,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 22px; /* Increased font size for footer */
+    font-family: 'Jomhuria', sans-serif; /* Applying font family to footer */
 }
 
 .address {
