@@ -171,17 +171,33 @@
 
     <!-- Main content -->
     <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK’s leading seller of top quality small bulbs and unusual perennials</h2>
+    <h2 class="sub-message">The UK's leading seller of top quality small bulbs and unusual perennials</h2>
     <div class="container">
         <div class="left-box">
-            <p>This is the left box with text</p>
+            <p>Information</p>
+            <p>
+                Our display garden is open to visit from Monday to Friday with a £3 charity donation.
+                Based in Somerset, UK, Broadleigh Gardens has been leading the field in the propagation and mail-order retail of small bulbs for over 40 years!
+                We are a family run business and you can be assured of top quality bulbs from us and a personal service.
+                As well as a full range of iris, snowdrops, S.African bulbs and woodlanders, we hold the National Collection of Alec Gray hybrids miniature daffodils. We also have a historic collection of unusual daffodil varieties and species.
+            </p>
         </div>
         <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
         <div class="landscape-box">
-            <p>This is the landscape box underneath the center image</p>
+            <p>We produce two online lists a year:</p>
+            <p>
+                Spring Catalogue covers items posted in February - April, this includes snowdrops, agapanthus, lillies etc.
+                Autumn Catalogue includes mainstream tulips, daffodils, corcus etc. This store is closed until May.
+                Why not come and visit our display gardens and nursery, which are open all year, Monday to Friday, 9 am to 4 pm except Bank Holidays: £2.50 donation to St Margaret's Somerset Hospice. Our generous visitors have helped us raise over £5,000 for this good cause.
+            </p>
         </div>
         <div class="right-box">
-            <p>This is the right box with text</p>
+            <p>Notice</p>
+            <p>
+                Our last Spring Catalogue of Snowdrops, South African plants and iris etc is now active and plants are selling fast.
+                We have now stopped sales from our 2023 Autumn Store. . We will sell these spring flowering bulbs like tulips, daffodils, crocus etc again from June 2024. They will continue to be posted from Kent.
+                We have stopped selling items from our Special Bulbs List -  of miniature daffs, especially the Alec Gray cultivars, dwarf bearded iris and Pacific Coast iris etc from the collections grown here in Somerset . If you are interested in any of these leave us a message in case we are still here in the autumn.
+            </p>
         </div>
     </div>
 
