@@ -175,10 +175,10 @@
                 Our spring flowering bulbs like tulips will now be posted by another firm and enquiries regarding these orders should be addressed to them:
             </p>
             <p>
-                broadleigh@dejager.co.uk
+                Email: broadleigh@dejager.co.uk
             </p>
             <p>
-                01622 845990
+                Call: 01622 845990
             </p>
             <p>
                 Bulbs from our Alec Gray collection of miniature daffodils and other rare bulbs will be posted from here in August/September. See Special Bulbs list for these.
@@ -187,7 +187,7 @@
                 Christine Skelmersdale is a well known and inspirational lecturer.
             </p>
         </div>
-        <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
+        <img src="images/NewsImage.png" alt="Middle Image" class="middle-image">
     </div>
 
     <!-- Footer -->

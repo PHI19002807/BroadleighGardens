@@ -89,23 +89,30 @@
             margin-right: 10px;
         }
         .container {
+            position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             text-align: center;
             margin-top: 50px;
+            flex-wrap: wrap;
         }
+
         .left-box, .right-box {
-            width: 200px;
-            height: 300px;
+            width: 500px;
+            height: 600px;
             border: 1px solid black;
             margin: 10px;
             padding: 10px;
+            background-color: #9C9555;
         }
-        .middle-image {
-            width: 627px;
-            height: 399px;
-            margin: 0 auto;
+        .landscape-box {
+            width: 900px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #9C9555;
         }
         .welcome-message {
             color: #944365;
@@ -120,6 +127,7 @@
             font-family: 'Jomhuria', sans-serif;
             font-weight: normal;
         }
+
     </style>
 </head>
 <body>
@@ -154,14 +162,44 @@
 
     <!-- Main content -->
     <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK’s leading seller of top quality small bulbs and unusual perennials</h2>
+    <h2 class="sub-message">The UK's leading seller of top quality small bulbs and unusual perennials</h2>
     <div class="container">
         <div class="left-box">
-            <p>This is the left box with text</p>
+            <p>Mail Order & Directions</p>
+            <p>
+            We are principally a mail order business with two catalogues covering three despatch periods. We accept payments by cheque, postal order or Mastercard/Visa. Take Junction 25 of the M5, pass through Taunton, following signs for Wellington (A38). to the Silk Mills roundabout. (There has been a change of access into Bishops Hull. If coming from Wellington continue to the roundabout.) Turn  at the roundabout onto Silk Mills Road then left onto Waterfield Drive. At the top turn right onto Bishops Hull Road Turn left at Bishops Hull Post Office, down Shutewater Hill. Then turn right onto Frethey Lane.
+            </p>
         </div>
-        <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
+        <div class="landscape-box">
+            <p>We produce two online lists a year:</p>
+            <p>
+                Spring Catalogue covers items posted in February - April, this includes snowdrops, agapanthus, lillies etc.
+                Autumn Catalogue includes mainstream tulips, daffodils, corcus etc. This store is closed until May.
+                Why not come and visit our display gardens and nursery, which are open all year, Monday to Friday, 9 am
+            </p>
+        </div>
         <div class="right-box">
-            <p>This is the right box with text</p>
+           
+
+            <p>Contact Information & Opening Hours</p>
+            <p>
+            Main office telephone and answer phone:01823 286231
+            </p>
+            <p>
+                Spring bulb order line: 01622 845990 Mon-Fri 9-5
+            </p>
+            <p>
+                Fax: 01823 323646
+            </p>
+            <p>
+                Email: sales@broadleighbulbs.co.uk
+            </p>
+            <p>
+            Registered Office of Broadleigh Nurseries Ltd Registration No. 1074105 (England)
+            </p>
+            <p>
+            Open Monday to Friday, 9.00 am - 4.00 pm, closed at weekends and Bank Holidays
+            </p>
         </div>
     </div>
 
