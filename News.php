@@ -89,23 +89,35 @@
             margin-right: 10px;
         }
         .container {
+            position: relative; /* Make the container relative for absolute positioning */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Change to align items at the top */
             text-align: center;
             margin-top: 50px;
+            flex-wrap: wrap;
         }
+
         .left-box, .right-box {
-            width: 200px;
-            height: 300px;
+            width: 500px;
+            height: 600px;
             border: 1px solid black;
             margin: 10px;
             padding: 10px;
+            background-color: #9C9555;
         }
         .middle-image {
             width: 627px;
             height: 399px;
             margin: 0 auto;
+        }
+        .landscape-box {
+            width: 80%;
+            height: 300px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            background-color: #9C9555;
         }
         .welcome-message {
             color: #944365;
@@ -120,6 +132,7 @@
             font-family: 'Jomhuria', sans-serif;
             font-weight: normal;
         }
+
     </style>
 </head>
 <body>
@@ -153,16 +166,28 @@
     </div>
 
     <!-- Main content -->
-    <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK’s leading seller of top quality small bulbs and unusual perennials</h2>
+    <h1 class="welcome-message">News</h1>
     <div class="container">
-        <div class="left-box">
-            <p>This is the left box with text</p>
+        <div class="landscape-box">
+            <p>We produce two online lists a year:</p>
+            <p>
+                Our spring catalogue will be sent out in January and orders are sent from Taunton, from late January to early April.
+                Our spring flowering bulbs like tulips will now be posted by another firm and enquiries regarding these orders should be addressed to them:
+            </p>
+            <p>
+                broadleigh@dejager.co.uk
+            </p>
+            <p>
+                01622 845990
+            </p>
+            <p>
+                Bulbs from our Alec Gray collection of miniature daffodils and other rare bulbs will be posted from here in August/September. See Special Bulbs list for these.
+            </p>
+            <p>
+                Christine Skelmersdale is a well known and inspirational lecturer.
+            </p>
         </div>
         <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
-        <div class="right-box">
-            <p>This is the right box with text</p>
-        </div>
     </div>
 
     <!-- Footer -->
