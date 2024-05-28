@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Jomhuria" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* CSS styling for navbar and footer */
         body {
             background-color: #B6CEAB;
             font-family: 'Jomhuria', sans-serif;
@@ -17,7 +17,7 @@
         .navbar {
             background-color: #4E5B46;
             color: #fff;
-            padding: 8px;
+            padding: 2px 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -26,18 +26,21 @@
         .navbar a {
             color: #fff;
             text-decoration: none;
-            margin-right: 8px; /* Reduced margin to bring links closer */
-            font-size: 40px; /* Increased font size */
+            margin-right: 20px;
+            font-size: 40px;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
         }
         .navbar a:last-child {
-            margin-right: 0; /* Remove right margin from the last link */
+            margin-right: 0;
         }
         .navbar h1 {
             margin: 0;
         }
         .navbar img {
             width: 75px;
-            margin-right: 20px;
+            margin-right: 10px;
         }
         .navbar a.brand-link {
             color: #AFE188;
@@ -45,21 +48,29 @@
         .navbar a.special-link {
             color: #000;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
             font-size: 36px;
+            margin-right: 10px;
+            margin-top: 12px;
         }
         .navbar a.special-link img {
             width: 20px;
             height: 20px;
-            margin-bottom: 5px;
+            margin-right: 5px;
         }
-        .navbar a.special-link:last-of-type img,
+        .navbar a.special-link:last-of-type img {
+            width: 40px;
+            height: 40px;
+        }
         .navbar a.special-link:nth-last-of-type(2) img,
         .navbar a.special-link:nth-last-of-type(3) img {
-            width: 40px; /* Double the original size */
-            height: 40px; /* Double the original size */
+            width: 50px;
+            height: 50px;
+        }
+        .navbar .right-links {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
         }
         .footer {
             background-color: #4E5B46;
@@ -71,6 +82,8 @@
             width: calc(100% - 40px);
             display: flex;
             justify-content: space-between;
+            font-size: 20px;
+            font-family: 'K2D', sans-serif;
         }
         .address {
             margin-right: 10px;
@@ -90,19 +103,22 @@
             padding: 10px;
         }
         .middle-image {
-            width: 300px;
-            height: 300px;
-            margin: 10px;
+            width: 627px;
+            height: 399px;
+            margin: 0 auto;
         }
         .welcome-message {
             color: #944365;
             text-align: center;
             font-family: 'Jomhuria', sans-serif;
+            font-size: 80px;
+            font-weight: normal;
         }
         .sub-message {
             color: black;
             text-align: center;
             font-family: 'Jomhuria', sans-serif;
+            font-weight: normal;
         }
     </style>
 </head>
@@ -120,18 +136,20 @@
         <a href="Staff.php">Staff</a>
         <a href="Reviews.php">Reviews</a>
         <a href="Loyalty.php">Loyalty</a>
-        <a href="SignUp.php" class="special-link">
-            <img src="images/SignUp.png" alt="Sign Up Icon">
-            Sign Up
-        </a>
-        <a href="Login.php" class="special-link">
-            <img src="images/Login.png" alt="Login Icon">
-            Login
-        </a>
-        <a href="Basket.php" class="special-link">
-            <img src="images/Basket.png" alt="Basket Icon">
-            Basket
-        </a>
+        <div class="right-links">
+            <a href="SignUp.php" class="special-link">
+                <img src="images/SignUp.png" alt="Sign Up Icon">
+                Sign Up
+            </a>
+            <a href="Login.php" class="special-link">
+                <img src="images/Login.png" alt="Login Icon">
+                Login
+            </a>
+            <a href="Basket.php" class="special-link">
+                <img src="images/Basket.png" alt="Basket Icon">
+                Basket
+            </a>
+        </div>
     </div>
 
     <!-- Main content -->
@@ -141,7 +159,7 @@
         <div class="left-box">
             <p>This is the left box with text</p>
         </div>
-        <img src="path/to/your/image.jpg" alt="Middle Image" class="middle-image">
+        <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
         <div class="right-box">
             <p>This is the right box with text</p>
         </div>
