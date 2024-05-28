@@ -89,23 +89,39 @@
             margin-right: 10px;
         }
         .container {
+            position: relative; /* Make the container relative for absolute positioning */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Change to align items at the top */
             text-align: center;
             margin-top: 50px;
+            flex-wrap: wrap;
         }
+
         .left-box, .right-box {
-            width: 200px;
-            height: 300px;
+            width: 500px;
+            height: 600px;
             border: 1px solid black;
             margin: 10px;
             padding: 10px;
+            background-color: #9C9555;
         }
         .middle-image {
             width: 627px;
             height: 399px;
             margin: 0 auto;
+        }
+        .landscape-box {
+            position: absolute; /* Position the landscape box absolutely */
+            top: 450px; /* Adjust the top position as needed */
+            left: 50%; /* Position at the center */
+            transform: translateX(-50%); /* Center horizontally */
+            width: 900px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            background-color: #9C9555;
         }
         .welcome-message {
             color: #944365;
@@ -120,6 +136,7 @@
             font-family: 'Jomhuria', sans-serif;
             font-weight: normal;
         }
+
     </style>
 </head>
 <body>
@@ -160,6 +177,9 @@
             <p>This is the left box with text</p>
         </div>
         <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
+        <div class="landscape-box">
+            <p>This is the landscape box underneath the center image</p>
+        </div>
         <div class="right-box">
             <p>This is the right box with text</p>
         </div>
