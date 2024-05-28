@@ -108,7 +108,7 @@
         }
         .landscape-box {
             width: 900px;
-            height: 200px;
+            height: 350px;
             border: 1px solid black;
             margin: 10px auto;
             padding: 10px;
@@ -161,8 +161,7 @@
     </div>
 
     <!-- Main content -->
-    <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK's leading seller of top quality small bulbs and unusual perennials</h2>
+    <h1 class="welcome-message">About Broadleigh</h1>
     <div class="container">
         <div class="left-box">
             <p>Mail Order & Directions</p>
@@ -171,11 +170,17 @@
             </p>
         </div>
         <div class="landscape-box">
-            <p>We produce two online lists a year:</p>
             <p>
-                Spring Catalogue covers items posted in February - April, this includes snowdrops, agapanthus, lillies etc.
-                Autumn Catalogue includes mainstream tulips, daffodils, corcus etc. This store is closed until May.
-                Why not come and visit our display gardens and nursery, which are open all year, Monday to Friday, 9 am
+                Broadleigh Gardens was founded during the 1940s by Alec Gray, who was famous for breeding miniature daffodils such as Tete-a-Tete. We bought Broadleigh Gardens in 1972 and still hold the National Collection of his hybrids. Since that time the nursery has expanded rapidly and is now the country's foremost small bulb specialist sending orders throughout the European Union by mail order. Our range is no longer limited to bulbs, but also includes a wide range of the more unusual herbaceous and woodland plants. We pride ourselves on the supply of top quality bulbs and plants.
+            </p>
+            <p>
+                We welcome visitors to our Nursery and extensive 5 acre gardens for a charitable donation. This year's charity is St. Margaret's Somerset Hospice. Please remember we are a working mail order nursery, and orders may only be collected with prior notice. We have a limited range of plants on sale for visitors.
+            </p>
+            <p>
+                The nursery has won many awards, including Gold Medals, at the RHS Westminster Shows, Tatton Park and at Chelsea, where our experienced staff will be delighted to answer any questions you might have.
+                For current news of what is happening in the nursery, special offers etc., see the News page.
+                Please remember this site only contains a very small sample of what Broadleigh Gardens has to offer. If you are searching for a particular plant or bulb, please contact us for further information
+
             </p>
         </div>
         <div class="right-box">

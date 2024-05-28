@@ -90,22 +90,30 @@
         }
         .container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start; /* Change to align items at the top */
+            text-align: left;
             margin-top: 50px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
         }
-        .left-box, .right-box {
-            width: 200px;
-            height: 300px;
+        .left-box {
+            width: 500px;
+            height: 385px;
             border: 1px solid black;
             margin: 10px;
             padding: 10px;
+            background-color: #9C9555;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            order: 2;
         }
         .middle-image {
-            width: 627px;
-            height: 399px;
-            margin: 0 auto;
+            width: 274px;
+            height: 407px;
+            margin: 10px;
+            order: 1;
         }
         .welcome-message {
             color: #944365;
@@ -154,14 +162,16 @@
 
     <!-- Main content -->
     <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK’s leading seller of top quality small bulbs and unusual perennials</h2>
+    <h2 class="sub-message">The UK's leading seller of top quality small bulbs and unusual perennials</h2>
     <div class="container">
+        <img src="images/GiftToken.png" alt="Middle Image" class="middle-image">
         <div class="left-box">
-            <p>This is the left box with text</p>
-        </div>
-        <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
-        <div class="right-box">
-            <p>This is the right box with text</p>
+            <p>Information</p>
+            <p>
+                Our unique and very popular Gift Tokens, drawn and designed by Christine Skelmersdale, make ideal presents for gardeners. Tokens to any value.
+                The tokens can be used to purchase any item in the catalogue current at the time of redemption. Please note that Gift Tokens do not have an expiry date.
+                We can either send the token directly to you or if you prefer, we can send it direct to your intended recipient together with a message from you, together with a current catalogue. The next season's catalogue will also be sent to them.
+            </p>
         </div>
     </div>
 
