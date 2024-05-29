@@ -5,6 +5,8 @@
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Jomhuria" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=K2D&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -89,15 +91,13 @@
             margin-right: 10px;
         }
         .container {
-            position: relative; /* Make the container relative for absolute positioning */
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Change to align items at the top */
+            justify-content: space-between;
+            align-items: flex-start;
             text-align: center;
             margin-top: 50px;
-            flex-wrap: wrap;
+            width: 100%;
         }
-
         .left-box, .right-box {
             width: 500px;
             height: 600px;
@@ -106,22 +106,43 @@
             padding: 10px;
             background-color: #9C9555;
         }
-        .middle-image {
-            width: 627px;
-            height: 399px;
-            margin: 0 auto;
+        .left-box {
+            position: absolute;
+            left: 0;
         }
-        .landscape-box {
-            position: absolute; /* Position the landscape box absolutely */
-            top: 450px; /* Adjust the top position as needed */
-            left: 50%; /* Position at the center */
-            transform: translateX(-50%); /* Center horizontally */
-            width: 900px;
-            height: 200px;
-            border: 1px solid black;
-            margin: 10px;
-            padding: 10px;
-            background-color: #9C9555;
+        .right-box {
+            position: absolute;
+            right: 0;
+        }
+        .carousel-container {
+            display: flex;
+            flex-direction: column; /* Changed to column layout */
+            align-items: center;
+            margin: 10px auto; /* Center the carousels on the page */
+            width: 100%; /* Set width to 100% */
+        }
+        .carousel {
+            width: 95%; /* Increased carousel width to 70% */
+            height: 600px; /* Increased carousel height to 600px */
+            margin: 0 auto; /* Center carousel */
+        }
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure images cover the entire area without stretching */
+        }
+        .carousel-item {
+            height: 600px; /* Fixed height for carousel items */
+            transition: transform 0.6s ease; /* Smooth transition to prevent popping */
+        }
+        .carousel-control-prev,
+        .carousel-control-next{
+            width: auto; /* Ensure carousel controls are not squeezed */
+            margin: 0 20px; /* Add margin to carousel controls */
         }
         .welcome-message {
             color: #944365;
@@ -136,8 +157,6 @@
             font-family: 'Jomhuria', sans-serif;
             font-weight: normal;
         }
-        
-
     </style>
 </head>
 <body>
@@ -153,7 +172,7 @@
         <a href="DisplayGarden.php">Display Garden</a>
         <a href="Staff.php">Staff</a>
         <a href="Reviews.php">Reviews</a>
-        <a href="Loyalty.php">Loyalty</a>
+        <ahref="Loyalty.php">Loyalty</a>
         <div class="right-links">
             <a href="SignUp.php" class="special-link">
                 <img src="images/SignUp.png" alt="Sign Up Icon">
@@ -178,29 +197,104 @@
             <p>
                 Our display garden is open to visit from Monday to Friday with a £3 charity donation.
                 Based in Somerset, UK, Broadleigh Gardens has been leading the field in the propagation and mail-order retail of small bulbs for over 40 years!
-                We are a family run business and you can be assured of top quality bulbs from us and a personal service.
-                As well as a full range of iris, snowdrops, S.African bulbs and woodlanders, we hold the National Collection of Alec Gray hybrids miniature daffodils. We also have a historic collection of unusual daffodil varieties and species.
-            </p>
-        </div>
-        <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
-        <div class="right-box">
-            <p>Notice</p>
-            <p>
-                Our last Spring Catalogue of Snowdrops, South African plants and iris etc is now active and plants are selling fast.
-                We have now stopped sales from our 2023 Autumn Store. . We will sell these spring flowering bulbs like tulips, daffodils, crocus etc again from June 2024. They will continue to be posted from Kent.
-                We have stopped selling items from our Special Bulbs List -  of miniature daffs, especially the Alec Gray cultivars, dwarf bearded iris and Pacific Coast iris etc from the collections grown here in Somerset . If you are interested in any of these leave us a message in case we are still here in the autumn.
-            </p>
+We are a family run business and you can be assured of top quality bulbs from us and a personal service.
+As well as a full range of iris, snowdrops, S.African bulbs and woodlanders, we hold the National Collection of Alec Gray hybrids miniature daffodils. We also have a historic collection of unusual daffodil varieties and species.
+</p>
+</div>
+    <!-- Carousel 1 -->
+    <div class="carousel-container">
+        <p>Winter and Spring collection</p>
+        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" data-interval="false">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/HomeMainImage.png" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/HomeMainImage.png" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/HomeMainImage.png" class="d-block w-100" alt="Image 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="address">
-            <p>Address: Barr House, Bishops Hull, Taunton, Somerset, TA4 1AE</p>
-        </div>
-        <div class="copyright-right">
-            <p>Copyright © 2023 Will Phillips</p>
+    <!-- Carousel 2 -->
+    <div class="carousel-container">
+        <p>Summer and Autumn collection</p>
+        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="false">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/HomeMainImage.png" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/HomeMainImage.png" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/HomeMainImage.png" class="d-block w-100" alt="Image 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
+
+    <div class="right-box">
+        <p>Notice</p>
+        <p>
+            Our last Spring Catalogue of Snowdrops, South African plants and iris etc is now active and plants are selling fast.
+            We have now stopped sales from our 2023 Autumn Store. We will sell these spring flowering bulbs like tulips, daffodils, crocus etc again from June 2024. They will continue to be posted from Kent.
+            We have stopped selling items from our Special Bulbs List - of miniature daffs, especially the Alec Gray cultivars, dwarf bearded iris and Pacific Coast iris etc from the collections grown here in Somerset. If you are interested in any of these leave us a message in case we are still here in the autumn.
+        </p>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="address">
+        <p>Address: Barr House, Bishops Hull, Taunton, Somerset, TA4 1AE</p>
+    </div>
+    <div class="copyright-right">
+        <p>Copyright © 2023 Will Phillips</p>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<scriptsrc="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            interval: false
+        });
+    });
+</script>
 </body>
 </html>
+
+
