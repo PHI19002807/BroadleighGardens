@@ -10,7 +10,7 @@
         body {
             background-color: #B6CEAB;
             font-family: 'Jomhuria', sans-serif;
-            font-size: 24px;
+            font-size: 28px;
             margin: 0;
             padding: 0;
         }
@@ -89,15 +89,14 @@
             margin-right: 10px;
         }
         .container {
-            position: relative; /* Make the container relative for absolute positioning */
+            position: relative;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Change to align items at the top */
+            align-items: flex-start;
             text-align: center;
             margin-top: 50px;
             flex-wrap: wrap;
         }
-
         .left-box, .right-box {
             width: 500px;
             height: 600px;
@@ -107,15 +106,15 @@
             background-color: #9C9555;
         }
         .middle-image {
-            width: 627px;
-            height: 399px;
+            width: 280px;
+            height: 400px;
             margin: 0 auto;
         }
         .landscape-box {
-            position: absolute; /* Position the landscape box absolutely */
-            top: 450px; /* Adjust the top position as needed */
-            left: 50%; /* Position at the center */
-            transform: translateX(-50%); /* Center horizontally */
+            position: absolute;
+            top: 450px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 900px;
             height: 200px;
             border: 1px solid black;
@@ -130,13 +129,23 @@
             font-size: 80px;
             font-weight: normal;
         }
-        .sub-message {
+        .BookMessage {
             color: black;
             text-align: center;
             font-family: 'Jomhuria', sans-serif;
             font-weight: normal;
         }
+        .top-left-image-container {
+            position: absolute;
+            top: 0; /* Adjust this value to move the image higher or lower */
+            left: 20px; /* Adjust this value to create the desired gap */
+            transform: translateY(-100%); /* Move the container above its normal position */
+        }
 
+        .top-left-image {
+            width: 325px;
+            height: 200px;
+        }
     </style>
 </head>
 <body>
@@ -170,33 +179,53 @@
     </div>
 
     <!-- Main content -->
-    <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK's leading seller of top quality small bulbs and unusual perennials</h2>
+    <h1 class="welcome-message">Staff</h1>
+    <h1 class="BookMessage">Christine's Guide</h1>
     <div class="container">
+        <!-- Image container at the top left -->
+        <div class="top-left-image-container">
+            <img src="images/StaffCS.png" alt="Top Left Image" class="top-left-image">
+        </div>
+        
+        <!-- Left box -->
         <div class="left-box">
-            <p>Information</p>
+            <p>Christine Skelmersdale</p>
             <p>
-                Our display garden is open to visit from Monday to Friday with a £3 charity donation.
-                Based in Somerset, UK, Broadleigh Gardens has been leading the field in the propagation and mail-order retail of small bulbs for over 40 years!
-                We are a family run business and you can be assured of top quality bulbs from us and a personal service.
-                As well as a full range of iris, snowdrops, S.African bulbs and woodlanders, we hold the National Collection of Alec Gray hybrids miniature daffodils. We also have a historic collection of unusual daffodil varieties and species.
+                Christine Skelmersdale has been an enthusiastic gardener since childhood and has been the Managing Director of Broadleigh Gardens, a nursery which specialises in smaller bulbs, woodland and foliage plants for 40+ years. The 5 acre garden is open every weekday for a charitable donation. 
+                A keen plant photographer with an extensive library of slides. An inspirational lecturer, she lectures widely in Britain and abroad both on gardening topics and plants in the wild (China, Nepal, S.Andes etc.). 
+                She also specialises in Day Courses on the background and use of bulbs creatively in the garden, but also has a long list of general lectures - she has been recently described as “an exhilarating lecturer with contagious enthusiasm”
             </p>
         </div>
-        <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
+        
+        <!-- Middle image -->
+        <img src="images/Staff.jpg" alt="Middle Image" class="middle-image">
+        <p></p>
+        
+        <!-- Landscape box -->
         <div class="landscape-box">
-            <p>We produce two online lists a year:</p>
+            <p>Christine the author</p>
             <p>
-                Spring Catalogue covers items posted in February - April, this includes snowdrops, agapanthus, lillies etc.
-                Autumn Catalogue includes mainstream tulips, daffodils, corcus etc. This store is closed until May.
-                Why not come and visit our display gardens and nursery, which are open all year, Monday to Friday, 9 am to 4 pm except Bank Holidays: £2.50 donation to St Margaret's Somerset Hospice. Our generous visitors have helped us raise over £5,000 for this good cause.
+                Author of "Creative Gardening with Bulbs" (1989), she writes articles and reviews for, amongst others, The Garden, The Daily Telegraph, Gardeners' World Magazine and published “Gardeners Guide to Bulbs” in July 2012.
+                She was a member of the Council of the Royal Horticultural Society for 11 years. She was a member of the Gardens Committee, with special responsibility of Rosemoor, for 12 years and was Vice Chairman of the Bulb Committee and a member of the Daffodil and Tulip Year Book Committee.
+
             </p>
         </div>
+        
+        <!-- Right box -->
         <div class="right-box">
-            <p>Notice</p>
+            <p>In the office:</p>
+            <p>Gill deals with your orders and queries.</p>
+            <p>In the nursery:</p>
+            <p>Andrew and Nick grow and look after the plants</p>
+
+            <p>Additional information on Christine</p>
             <p>
-                Our last Spring Catalogue of Snowdrops, South African plants and iris etc is now active and plants are selling fast.
-                We have now stopped sales from our 2023 Autumn Store. . We will sell these spring flowering bulbs like tulips, daffodils, crocus etc again from June 2024. They will continue to be posted from Kent.
-                We have stopped selling items from our Special Bulbs List -  of miniature daffs, especially the Alec Gray cultivars, dwarf bearded iris and Pacific Coast iris etc from the collections grown here in Somerset . If you are interested in any of these leave us a message in case we are still here in the autumn.
+                Species peonies are one of her passions and there is a large collection of peonies at Broadleigh.
+                As President of Friends of the Bristol Botanic Garden, she was heavily involved in the move to The Holmes and the creation of the new garden. She remains on the Curatorial Advisory Committee.
+                In 2002 she was made an Honorary Fellow of Myerscough College ( University of Lancaster)
+                At the 2009 Hampton Court Flower Show Christine Skelmersdale was presented with the Victoria Medal of Honour (VMH) - the RHS's highest award for services to horticulture.
+                She has been a member and chairman of many RHS trial Forums that award the coveted AGM.
+                In April 2020 she was awarded the Peter Barr Memorial Cup for her services to daffodils.
             </p>
         </div>
     </div>

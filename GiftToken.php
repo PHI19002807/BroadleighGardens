@@ -75,7 +75,7 @@ $conn->close();
         body {
             background-color: #B6CEAB;
             font-family: 'Jomhuria', sans-serif;
-            font-size: 24px;
+            font-size: 28px;
             margin: 0;
             padding: 0;
         }
