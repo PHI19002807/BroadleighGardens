@@ -1,3 +1,68 @@
+<?php
+// Database connection details
+$servername = "localhost";
+$username = "root"; // Assuming the default username is root
+$password = ""; // Assuming no password is set
+$dbname = "broadleighgardens"; // Your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if all required fields are set
+    if(isset($_POST['name'], $_POST['address'], $_POST['city'], $_POST['postal_code'], $_POST['country'], $_POST['phone'], $_POST['email'], $_POST['amount'], $_POST['date'], $_POST['personal_message'])) {
+        // Prepare SQL statement to insert data into the gifttokens table
+        $sql = "INSERT INTO gifttokens (Name, Address, City, PostalCode, Country, PhoneNo, Email, Amount, Date, PersonalMessage)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        // Bind parameters
+        $stmt->bind_param("sssssssdss", $name, $address, $city, $postal_code, $country, $phone, $email, $amount, $date, $personal_message);
+
+        // Set parameters
+        $name = $_POST['name'];
+        $address = $_POST['address'];
+        $city = $_POST['city'];
+        $postal_code = $_POST['postal_code'];
+        $country = $_POST['country'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $amount = $_POST['amount'];
+        $date = $_POST['date'];
+        $personal_message = $_POST['personal_message'];
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            echo "Gift token information inserted successfully.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+        // Close statement
+        $stmt->close();
+    } else {
+        echo "One or more required fields are missing.";
+    }
+}
+
+// Close database connection
+$conn->close();
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,10 +168,6 @@
             margin: 10px;
             padding: 10px;
             background-color: #9C9555;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
             order: 2;
         }
         .middle-image {
@@ -127,6 +188,14 @@
             text-align: center;
             font-family: 'Jomhuria', sans-serif;
             font-weight: normal;
+        }
+        .right-box {
+            width: calc(50% - 20px); /* Adjusted width */
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            background-color: #9C9555;
+            order: 3;
         }
     </style>
 </head>
@@ -161,12 +230,11 @@
     </div>
 
     <!-- Main content -->
-    <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK's leading seller of top quality small bulbs and unusual perennials</h2>
+    <h1 class="welcome-message">Gift Token</h1>
     <div class="container">
         <img src="images/GiftToken.png" alt="Middle Image" class="middle-image">
         <div class="left-box">
-            <p>Information</p>
+        <p>Information</p>
             <p>
                 Our unique and very popular Gift Tokens, drawn and designed by Christine Skelmersdale, make ideal presents for gardeners. Tokens to any value.
                 The tokens can be used to purchase any item in the catalogue current at the time of redemption. Please note that Gift Tokens do not have an expiry date.
@@ -174,7 +242,7 @@
             </p>
         </div>
     </div>
-
+    
     <!-- Footer -->
     <div class="footer">
         <div class="address">
