@@ -1,45 +1,17 @@
 <?php
-require 'includes/db.php';
+
+require_once 'controllers/UserController.php';
+
+$userController = new UserController();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect input values
-    $fname = $_POST['fname'];
+
+     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Hash the password using bcrypt
-    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-
-    // Connect to the database
-    $conn = connectDB();
-
-    // Check if the email already exists
-    $stmt = $conn->prepare("SELECT COUNT(*) FROM Users WHERE Email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->bind_result($count);
-    $stmt->fetch();
-    $stmt->close();
-
-    if ($count > 0) {
-        echo "Error: The email address is already registered.";
-    } else {
-        // Prepare the SQL statement for inserting the new user
-        $stmt = $conn->prepare("INSERT INTO Users (Fname, Lname, Email, Password) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $fname, $lname, $email, $hashedPassword);
-
-        // Execute the statement
-        if ($stmt->execute()) {
-            header("Location: Login.php");
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-
-        $stmt->close();
-    }
-
-    $conn->close();
+    $userController->signUp($fname, $lname, $email, $password);
 }
 ?>
 
