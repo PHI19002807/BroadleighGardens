@@ -2,21 +2,43 @@
 require 'includes/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect input values
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $password = $_POST['password'];
 
+    // Hash the password using bcrypt
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+    // Connect to the database
     $conn = connectDB();
-    $stmt = $conn->prepare("INSERT INTO Users (Fname, Lname, Email, Password) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $fname, $lname, $email, $password);
 
-    if ($stmt->execute()) {
-        header("Location: Login.php");
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+    // Check if the email already exists
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM Users WHERE Email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->bind_result($count);
+    $stmt->fetch();
     $stmt->close();
+
+    if ($count > 0) {
+        echo "Error: The email address is already registered.";
+    } else {
+        // Prepare the SQL statement for inserting the new user
+        $stmt = $conn->prepare("INSERT INTO Users (Fname, Lname, Email, Password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $fname, $lname, $email, $hashedPassword);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            header("Location: Login.php");
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    }
+
     $conn->close();
 }
 ?>
