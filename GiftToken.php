@@ -1,60 +1,10 @@
 <?php
-// Database connection details
-$servername = "localhost";
-$username = "root"; // Assuming the default username is root
-$password = ""; // Assuming no password is set
-$dbname = "broadleighgardens"; // Your database name
+// Include the controller file
+include('controllers/GiftTokenController.php');
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if all required fields are set
-    if(isset($_POST['name'], $_POST['address'], $_POST['city'], $_POST['postal_code'], $_POST['country'], $_POST['phone'], $_POST['email'], $_POST['amount'], $_POST['date'], $_POST['personal_message'])) {
-        // Prepare SQL statement to insert data into the gifttokens table
-        $sql = "INSERT INTO gifttokens (Name, Address, City, PostalCode, Country, PhoneNo, Email, Amount, Date, PersonalMessage)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-
-        // Bind parameters
-        $stmt->bind_param("sssssssdss", $name, $address, $city, $postal_code, $country, $phone, $email, $amount, $date, $personal_message);
-
-        // Set parameters
-        $name = $_POST['name'];
-        $address = $_POST['address'];
-        $city = $_POST['city'];
-        $postal_code = $_POST['postal_code'];
-        $country = $_POST['country'];
-        $phone = $_POST['phone'];
-        $email = $_POST['email'];
-        $amount = $_POST['amount'];
-        $date = $_POST['date'];
-        $personal_message = $_POST['personal_message'];
-
-        // Execute the statement
-        if ($stmt->execute()) {
-            echo "Gift token information inserted successfully.";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-
-        // Close statement
-        $stmt->close();
-    } else {
-        echo "One or more required fields are missing.";
-    }
-}
-
-// Close database connection
-$conn->close();
+// Create an instance of the controller
+$controller = new GiftTokenController();
 ?>
-
 
 
 
@@ -190,7 +140,8 @@ $conn->close();
             font-weight: normal;
         }
         .right-box {
-            width: calc(50% - 20px); /* Adjusted width */
+            width: 200px;
+            height: 700px;
             border: 1px solid black;
             margin: 10px;
             padding: 10px;
@@ -229,19 +180,26 @@ $conn->close();
         </div>
     </div>
 
-    <!-- Main content -->
-    <h1 class="welcome-message">Gift Token</h1>
-    <div class="container">
-        <img src="images/GiftToken.png" alt="Middle Image" class="middle-image">
-        <div class="left-box">
+ <!-- Main content -->
+<h1 class="welcome-message">Gift Token</h1>
+<div class="container">
+    <img src="images/GiftToken.png" alt="Middle Image" class="middle-image">
+    <div class="left-box">
         <p>Information</p>
-            <p>
-                Our unique and very popular Gift Tokens, drawn and designed by Christine Skelmersdale, make ideal presents for gardeners. Tokens to any value.
-                The tokens can be used to purchase any item in the catalogue current at the time of redemption. Please note that Gift Tokens do not have an expiry date.
-                We can either send the token directly to you or if you prefer, we can send it direct to your intended recipient together with a message from you, together with a current catalogue. The next season's catalogue will also be sent to them.
-            </p>
-        </div>
+        <p>
+            Our unique and very popular Gift Tokens, drawn and designed by Christine Skelmersdale, make ideal presents for gardeners. Tokens to any value.
+            The tokens can be used to purchase any item in the catalogue current at the time of redemption. Please note that Gift Tokens do not have an expiry date.
+            We can either send the token directly to you or if you prefer, we can send it direct to your intended recipient together with a message from you, together with a current catalogue. The next season's catalogue will also be sent to them.
+        </p>
     </div>
+    
+    <div class="right-box">
+        <?php
+        // Call the showForm() method of the controller
+        $controller->showForm();
+        ?>
+    </div>
+
     
     <!-- Footer -->
     <div class="footer">
