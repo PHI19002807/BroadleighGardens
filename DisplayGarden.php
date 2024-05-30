@@ -19,7 +19,7 @@
         .navbar {
             background-color: #4E5B46;
             color: #fff;
-            padding: 2px 8px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -30,7 +30,6 @@
             text-decoration: none;
             margin-right: 20px;
             font-size: 40px;
-            margin-top: 12px;
             display: flex;
             align-items: center;
         }
@@ -53,7 +52,6 @@
             align-items: center;
             font-size: 36px;
             margin-right: 10px;
-            margin-top: 12px;
         }
         .navbar a.special-link img {
             width: 20px;
@@ -81,7 +79,7 @@
             position: fixed;
             left: 0;
             bottom: 0;
-            width: calc(100% - 40px);
+            width: 100%;
             display: flex;
             justify-content: space-between;
             font-size: 20px;
