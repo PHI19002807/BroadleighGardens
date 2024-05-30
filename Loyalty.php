@@ -153,16 +153,30 @@
     </div>
 
     <!-- Main content -->
-    <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK’s leading seller of top quality small bulbs and unusual perennials</h2>
+    <h1 class="welcome-message">Loyalty Program</h1>
+
+    <!-- Loyalty Balance -->
+    <div class="container" id="loyaltyBalanceContainer">
+        <h2>Your Loyalty Balance  </h2>
+        <p id="loyaltyBalance">Loading...</p>
+    </div>
+
+    <!-- Available Rewards -->
+    <div class="container" id="availableRewardsContainer">
+        <h2>Available Rewards</h2>
+        <ul id="availableRewardsList">
+        </ul>
+    </div>
+
+    <!-- Redeem Rewards Form -->
     <div class="container">
-        <div class="left-box">
-            <p>This is the left box with text</p>
-        </div>
-        <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
-        <div class="right-box">
-            <p>This is the right box with text</p>
-        </div>
+        <h2>Redeem Rewards</h2>
+        <form id="redeemRewardsForm">
+            <label for="reward">Select Reward:</label>
+            <select name="reward" id="rewardSelect">
+            </select>
+            <input type="submit" value="Redeem">
+        </form>
     </div>
 
     <!-- Footer -->
@@ -174,5 +188,67 @@
             <p>Copyright © 2023 Will Phillips</p>
         </div>
     </div>
+    <script>
+        // Example data
+        let loyaltyBalance = 100;
+        let availableRewards = [
+            { name: 'Discount Coupon', points: 50 },
+            { name: 'Free Gift', points: 100 },
+            { name: 'VIP Access', points: 200 }
+        ];
+
+        // Function to display loyalty balance
+        function displayLoyaltyBalance() {
+            document.getElementById('loyaltyBalance').textContent = loyaltyBalance + ' points';
+        }
+
+        // Function to display available rewards
+        function displayAvailableRewards() {
+            const rewardsList = document.getElementById('availableRewardsList');
+            rewardsList.innerHTML = '';
+            availableRewards.forEach(reward => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${reward.name} - ${reward.points} points`;
+                rewardsList.appendChild(listItem);
+            });
+        }
+
+        // Function to allow users to select rewards
+        function populateRewardSelectOptions() {
+            const rewardSelect = document.getElementById('rewardSelect');
+            availableRewards.forEach(reward => {
+                const option = document.createElement('option');
+                option.value = reward.name;
+                option.textContent = `${reward.name} - ${reward.points} points`;
+                rewardSelect.appendChild(option);
+            });
+        }
+
+        // Function to redeem rewards
+        function redeemRewards() {
+            const selectedRewardName = document.getElementById('rewardSelect').value;
+            const selectedReward = availableRewards.find(reward => reward.name === selectedRewardName);
+            if (selectedReward) {
+                if (loyaltyBalance >= selectedReward.points) {
+                    loyaltyBalance -= selectedReward.points;
+                    displayLoyaltyBalance();
+                    alert(`Congratulations! You have redeemed "${selectedReward.name}".`);
+                } else {
+                    alert('Insufficient loyalty points to redeem this reward.');
+                }
+            }
+        }
+
+        // Display initial data
+        displayLoyaltyBalance();
+        displayAvailableRewards();
+        populateRewardSelectOptions();
+
+        // Event listener for redeem rewards form submission
+        document.getElementById('redeemRewardsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            redeemRewards();
+        });
+    </script>
 </body>
 </html>

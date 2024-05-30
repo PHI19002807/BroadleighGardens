@@ -172,7 +172,7 @@
         <a href="DisplayGarden.php">Display Garden</a>
         <a href="Staff.php">Staff</a>
         <a href="Reviews.php">Reviews</a>
-        <ahref="Loyalty.php">Loyalty</a>
+        <a href="Loyalty.php">Loyalty</a>
         <div class="right-links">
             <a href="SignUp.php" class="special-link">
                 <img src="images/SignUp.png" alt="Sign Up Icon">
@@ -273,15 +273,17 @@ As well as a full range of iris, snowdrops, S.African bulbs and woodlanders, we 
     </div>
 </div>
 
-<!-- Footer -->
-<div class="footer">
-    <div class="address">
-        <p>Address: Barr House, Bishops Hull, Taunton, Somerset, TA4 1AE</p>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="address">
+            <p>Address: Barr House, Bishops Hull, Taunton, Somerset, TA4 1AE</p>
+        </div>
+        <div class="copyright-right">
+            <p>Copyright © 2023 Will Phillips</p>
+        </div>
     </div>
-    <div class="copyright-right">
-        <p>Copyright © 2023 Will Phillips</p>
-    </div>
-</div>
+</body>
+</html>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

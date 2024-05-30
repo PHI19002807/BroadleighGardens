@@ -1,3 +1,21 @@
+<?php
+// Function to fetch products from the database
+function fetchProductsFromDatabase() {
+
+
+    return [
+        ['ProductID' => 1, 'Name' => 'Product A'],
+        ['ProductID' => 2, 'Name' => 'Product B'],
+        ['ProductID' => 3, 'Name' => 'Product C']
+    ];
+}
+
+// Fetch products from the database
+$products = fetchProductsFromDatabase();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,6 +138,31 @@
             font-family: 'Jomhuria', sans-serif;
             font-weight: normal;
         }
+        .review-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .review-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .review-form select, .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .review-form input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -152,17 +195,29 @@
         </div>
     </div>
 
+
     <!-- Main content -->
-    <h1 class="welcome-message">Welcome to Broadleigh Gardens</h1>
-    <h2 class="sub-message">The UK’s leading seller of top quality small bulbs and unusual perennials</h2>
-    <div class="container">
-        <div class="left-box">
-            <p>This is the left box with text</p>
-        </div>
-        <img src="images/HomeMainImage.png" alt="Middle Image" class="middle-image">
-        <div class="right-box">
-            <p>This is the right box with text</p>
-        </div>
+    <h1 class="welcome-message">Reviews</h1>
+
+    <!-- Review Form -->
+    <div class="container review-form">
+        <h2>Add a Review</h2>
+        <form action="controllers/submit_review.php" method="post">
+            <label for="product">Select Product:</label>
+            <select name="product" id="product">
+                <?php
+                // Loop through products and generate options
+                foreach ($products as $product) {
+                    echo "<option value='" . $product['ProductID'] . "'>" . $product['Name'] . "</option>";
+                }
+                ?>
+            </select>
+            <label for="rating">Rating (0-5):</label>
+            <input type="number" name="rating" id="rating" min="0" max="5" required>
+            <label for="review">Review:</label>
+            <textarea name="review" id="review" rows="4" required></textarea>
+            <input type="submit" value="Submit Review">
+        </form>
     </div>
 
     <!-- Footer -->
