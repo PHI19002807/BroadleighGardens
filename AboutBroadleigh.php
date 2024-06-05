@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=K2D&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        
         body {
             background-color: #B6CEAB;
             font-family: 'Jomhuria', sans-serif;

@@ -89,10 +89,10 @@
             margin-right: 10px;
         }
         .container {
-            position: relative; /* Make the container relative for absolute positioning */
+            position: relative;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Change to align items at the top */
+            align-items: flex-start;
             text-align: center;
             margin-top: 50px;
             flex-wrap: wrap;
@@ -112,10 +112,10 @@
             margin: 0 auto;
         }
         .landscape-box {
-            position: absolute; /* Position the landscape box absolutely */
-            top: 450px; /* Adjust the top position as needed */
-            left: 50%; /* Position at the center */
-            transform: translateX(-50%); /* Center horizontally */
+            position: absolute;
+            top: 450px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 900px;
             height: 200px;
             border: 1px solid black;

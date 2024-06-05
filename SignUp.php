@@ -3,7 +3,7 @@
 require_once 'controllers/UserController.php';
 
 $userController = new UserController();
-
+//Post method for signing up
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
      $fname = $_POST['fname'];

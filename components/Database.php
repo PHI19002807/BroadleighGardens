@@ -3,11 +3,12 @@
 class Database {
     private $conn;
 
+    //Constructs db connection
     public function __construct() {
-        require_once 'includes/db.php'; // Assuming db.php contains the connection code
+        require_once 'includes/db.php';
         $this->conn = connectDB();
     }
-
+    //Checks email
     public function checkEmailExists($email) {
         $stmt = $this->conn->prepare("SELECT COUNT(*) FROM Users WHERE Email = ?");
         $stmt->bind_param("s", $email);
@@ -17,7 +18,7 @@ class Database {
         $stmt->close();
         return $count > 0;
     }
-
+    //Inserts user information
     public function insertUser($fname, $lname, $email, $hashedPassword) {
         $stmt = $this->conn->prepare("INSERT INTO Users (Fname, Lname, Email, Password) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $fname, $lname, $email, $hashedPassword);
@@ -25,7 +26,7 @@ class Database {
         $stmt->close();
         return $result;
     }
-
+    //Gets the user by email
     public function getUserByEmail($email) {
         $stmt = $this->conn->prepare("SELECT * FROM Users WHERE Email = ?");
         $stmt->bind_param("s", $email);

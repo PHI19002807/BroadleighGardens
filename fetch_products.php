@@ -1,18 +1,18 @@
 <?php
-require 'includes/db2.php'; // Ensure this path is correct
+require 'includes/db2.php';
 
-// Check if the database connection is established
+//Check if the database connection is established
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 $category = isset($_GET['category']) ? $_GET['category'] : '';
-
+//Selecting all data from products
 $sql = "SELECT * FROM products";
 if (!empty($category)) {
     $sql .= " WHERE Category = ?";
 }
-
+//Preparing connection
 $stmt = $conn->prepare($sql);
 if ($stmt === false) {
     die("Prepare failed: " . $conn->error);

@@ -189,7 +189,7 @@
         </div>
     </div>
     <script>
-        // Example data
+        //Example data
         let loyaltyBalance = 100;
         let availableRewards = [
             { name: 'Discount Coupon', points: 50 },
@@ -197,12 +197,12 @@
             { name: 'VIP Access', points: 200 }
         ];
 
-        // Function to display loyalty balance
+        //Function to display loyalty balance
         function displayLoyaltyBalance() {
             document.getElementById('loyaltyBalance').textContent = loyaltyBalance + ' points';
         }
 
-        // Function to display available rewards
+        //Function to display available rewards
         function displayAvailableRewards() {
             const rewardsList = document.getElementById('availableRewardsList');
             rewardsList.innerHTML = '';
@@ -213,7 +213,7 @@
             });
         }
 
-        // Function to allow users to select rewards
+        //Function to allow users to select rewards
         function populateRewardSelectOptions() {
             const rewardSelect = document.getElementById('rewardSelect');
             availableRewards.forEach(reward => {
@@ -224,7 +224,7 @@
             });
         }
 
-        // Function to redeem rewards
+        //Function to redeem rewards
         function redeemRewards() {
             const selectedRewardName = document.getElementById('rewardSelect').value;
             const selectedReward = availableRewards.find(reward => reward.name === selectedRewardName);
@@ -239,12 +239,12 @@
             }
         }
 
-        // Display initial data
+        //Display initial data
         displayLoyaltyBalance();
         displayAvailableRewards();
         populateRewardSelectOptions();
 
-        // Event listener for redeem rewards form submission
+        //Event listener for redeem rewards form submission
         document.getElementById('redeemRewardsForm').addEventListener('submit', function(event) {
             event.preventDefault();
             redeemRewards();

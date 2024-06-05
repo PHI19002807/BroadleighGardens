@@ -3,7 +3,7 @@
 require_once 'controllers/LoginController.php';
 
 $loginController = new LoginController();
-
+//Post method for email and password
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];

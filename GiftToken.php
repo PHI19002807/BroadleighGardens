@@ -1,8 +1,6 @@
 <?php
-// Include the controller file
 include('controllers/GiftTokenController.php');
 
-// Create an instance of the controller
 $controller = new GiftTokenController();
 ?>
 
@@ -105,7 +103,7 @@ $controller = new GiftTokenController();
         }
         .container {
             display: flex;
-            align-items: flex-start; /* Change to align items at the top */
+            align-items: flex-start;
             text-align: left;
             margin-top: 50px;
             justify-content: flex-start;
@@ -195,7 +193,7 @@ $controller = new GiftTokenController();
     
     <div class="right-box">
         <?php
-        // Call the showForm() method of the controller
+        //Calling the showForm() method of the controller
         $controller->showForm();
         ?>
     </div>

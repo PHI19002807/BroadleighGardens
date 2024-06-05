@@ -1,5 +1,3 @@
-<!-- gift_token_form.php -->
-
 <p>Enter Gift Token Details</p>
 <form method="post" action="GiftTokenController.php?action=handleFormSubmission">
     <!-- Form fields -->

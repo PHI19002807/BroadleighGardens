@@ -114,15 +114,15 @@
         }
         .carousel-container {
             display: flex;
-            flex-direction: column; /* Changed to column layout */
+            flex-direction: column;
             align-items: center;
-            margin: 10px auto; /* Center the carousels on the page */
-            width: 100%; /* Set width to 100% */
+            margin: 10px auto;
+            width: 100%;
         }
         .carousel {
-            width: 95%; /* Increased carousel width to 70% */
-            height: 600px; /* Increased carousel height to 600px */
-            margin: 0 auto; /* Center carousel */
+            width: 95%;
+            height: 600px;
+            margin: 0 auto;
         }
         .carousel-inner {
             width: 100%;
@@ -131,16 +131,16 @@
         .carousel-inner img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure images cover the entire area without stretching */
+            object-fit: cover;
         }
         .carousel-item {
-            height: 600px; /* Fixed height for carousel items */
-            transition: transform 0.6s ease; /* Smooth transition to prevent popping */
+            height: 600px;
+            transition: transform 0.6s ease;
         }
         .carousel-control-prev,
         .carousel-control-next{
-            width: auto; /* Ensure carousel controls are not squeezed */
-            margin: 0 20px; /* Add margin to carousel controls */
+            width: auto;
+            margin: 0 20px;
         }
         .welcome-message {
             color: #944365;

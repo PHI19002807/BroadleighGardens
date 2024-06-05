@@ -2,12 +2,12 @@
 
 class Database {
     private $conn;
-
+    //Constructs db connection
     public function __construct() {
-        require_once 'includes/db.php'; // Assuming db.php contains the connection code
+        require_once 'includes/db.php';
         $this->conn = connectDB();
     }
-
+    //Gets user by email
     public function getUserByEmail($email) {
         $stmt = $this->conn->prepare("SELECT UserID, Password FROM Users WHERE Email = ?");
         $stmt->bind_param("s", $email);

@@ -1,14 +1,12 @@
 <?php
-// GiftTokenController.php
-
 class GiftTokenController {
-    // Define the showForm() method
+    // Defining the showForm() method
     public function showForm() {
-        // Include the form component
+        // Including the form component
         include(dirname(__FILE__) . '/../components/gift_token_form.php');
     }
 
-    // Define the handleFormSubmission() method
+    // Defining the handleFormSubmission() method
     public function handleFormSubmission() {
         // Database connection
         $servername = "localhost";
@@ -16,10 +14,10 @@ class GiftTokenController {
         $password = "";
         $dbname = "broadleighgardens";
 
-        // Create connection
+        // Creating connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Check connection
+        // Checking connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
@@ -30,7 +28,7 @@ class GiftTokenController {
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sssssssdss", $name, $address, $city, $postal_code, $country, $phone, $email, $amount, $date, $personal_message);
 
-        // Validate and sanitize form data
+        // Validating and sanitizing form data
         $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
         $address = filter_var($_POST['address'], FILTER_SANITIZE_STRING);
         $city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
@@ -42,7 +40,7 @@ class GiftTokenController {
         $date = filter_var($_POST['date'], FILTER_SANITIZE_STRING);
         $personal_message = filter_var($_POST['personal_message'], FILTER_SANITIZE_STRING);
 
-        // Validate form data
+        // Validating form data
         if (
             empty($name) || empty($address) || empty($city) || 
             empty($postal_code) || empty($country) || empty($phone) || 
@@ -51,7 +49,7 @@ class GiftTokenController {
             die("All fields are required.");
         }
 
-        // Execute the statement
+        // Executing the statement
         if ($stmt->execute()) {
             echo "<p>Gift token information inserted successfully.</p>";
         } else {

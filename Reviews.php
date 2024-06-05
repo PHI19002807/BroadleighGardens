@@ -1,5 +1,5 @@
 <?php
-// Function to fetch products from the database
+//Function to fetch products from the database
 function fetchProductsFromDatabase() {
 
 
@@ -10,7 +10,7 @@ function fetchProductsFromDatabase() {
     ];
 }
 
-// Fetch products from the database
+//Fetch products from the database
 $products = fetchProductsFromDatabase();
 ?>
 
@@ -206,7 +206,7 @@ $products = fetchProductsFromDatabase();
             <label for="product">Select Product:</label>
             <select name="product" id="product">
                 <?php
-                // Loop through products and generate options
+                //Loop through products and generate options
                 foreach ($products as $product) {
                     echo "<option value='" . $product['ProductID'] . "'>" . $product['Name'] . "</option>";
                 }

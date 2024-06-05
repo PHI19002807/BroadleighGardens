@@ -137,9 +137,9 @@
         }
         .top-left-image-container {
             position: absolute;
-            top: 0; /* Adjust this value to move the image higher or lower */
-            left: 20px; /* Adjust this value to create the desired gap */
-            transform: translateY(-100%); /* Move the container above its normal position */
+            top: 0;
+            left: 20px;
+            transform: translateY(-100%);
         }
 
         .top-left-image {
